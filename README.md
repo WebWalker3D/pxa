@@ -229,7 +229,6 @@ Models quantized to PXA formats by the team. New posts in the #models channel on
 
 | Model | Notes | Published by | Added |
 | --- | --- | --- | --- |
-|[Swift-1.5-Qwen3.8-Flash-Next-PXQN-32GB](https://huggingface.co/poisonxa/Swift-1.5-Qwen3.8-Flash-Next-PXQN-32GB) | Free. The exact file behind the v3.1 Overdrive numbers: one 16 GB P100/V100 plus system RAM, or two cards | PXANetwork | 2026-10-11|
 |[Swift-1.5-Qwen3.8-27B-PXQN-OneCard](https://huggingface.co/poisonxa/Swift-1.5-Qwen3.8-27B-PXQN-OneCard) |  | PXANetwork | 2026-10-01|
 |[Qwen3.8-27B-PXQN-OneCard](https://huggingface.co/poisonxa/Qwen3.8-27B-PXQN-OneCard) |  | PXANetwork | 2026-09-30|
 |[Ornith-1.5-35B-A3B-PXQ4-GGUF](https://huggingface.co/poisonxa/Ornith-1.5-35B-A3B-PXQ4-GGUF) | works with tensor split: -sm tensor | poisonxa | 2026-09-22|
