@@ -7,6 +7,7 @@
 <p align="center">
 <a href="https://github.com/poisonxa16/pxa/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/poisonxa16/pxa?label=release&color=E69F00&style=for-the-badge"></a>
 <a href="https://benchmarks.pxanetwork.com"><img alt="Live leaderboard" src="https://img.shields.io/badge/Leaderboard-benchmarks.pxanetwork.com-E69F00?style=for-the-badge"></a>
+<a href="https://setup.pxanetwork.com"><img alt="Setup guide" src="https://img.shields.io/badge/Setup%20guide-setup.pxanetwork.com-56B4E9?style=for-the-badge"></a>
 <a href="https://discord.gg/EqazvV9tf"><img alt="Discord" src="https://img.shields.io/badge/Discord-PXA%20Network-5865F2?logo=discord&logoColor=white&style=for-the-badge"></a>
 <a href="https://ko-fi.com/shatteredrealms1"><img alt="Ko-fi" src="https://img.shields.io/badge/Ko--fi-Support%20PXA-FF5E5B?logo=ko-fi&logoColor=white&style=for-the-badge"></a>
 </p>
@@ -15,7 +16,7 @@
 
 <p align="center"><img src="docs/img/v3.1/chart-best.png" alt="PXA v3.1 at its best: generation and prompt speed per model and card setup" width="900"></p>
 
-<p align="center"><b>New in v3.1:</b> PXA Overdrive, a self-learning expert map, a rebuilt PXA Control assistant (auto-compact, memory, sub-agents, web search with approvals) and more. <a href="https://github.com/poisonxa16/pxa/releases/tag/v3.1">Release notes, charts and screenshots</a>.</p>
+<p align="center"><b>New in v3.1:</b> PXA Overdrive, a self-learning expert map, a rebuilt PXA Control assistant (auto-compact, memory, sub-agents, web search with approvals) and more. <a href="https://github.com/poisonxa16/pxa/releases/tag/v3.1">Release notes, charts and screenshots</a>. New here? Start with the <a href="https://setup.pxanetwork.com">step-by-step setup guide</a> (tarball, Docker, Unraid, reaching PXA Control from your LAN).</p>
 
 ```bash
 tar xzf pxa-v3.1-linux-x86_64-cuda12.8-sm60_61_70.tar.gz && cd pxa-v3.1-linux-x86_64-cuda12.8-sm60_61_70    # 1. unpack the release tarball
