@@ -1,6 +1,6 @@
 # Models
 
-Models quantized to PXA formats by the team, newest first. This page and the Models section of the README are updated automatically from the #models channel on the [PXA Network Discord](https://discord.gg/EqazvV9tf).
+Models quantized to PXA formats by the team, newest first. This page and the Models section of the README are updated automatically from the #models channel on the [PXA Network Discord](https://discord.pxanetwork.com).
 
 | Model | Notes | Published by | Added | Downloads | Likes | Updated |
 | --- | --- | --- | --- | --- | --- |

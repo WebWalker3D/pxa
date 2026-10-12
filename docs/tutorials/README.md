@@ -37,7 +37,7 @@ have a working chat server.
 
 ## Getting help
 
-Discord: <https://discord.gg/EqazvV9tf> — [guide 10](10-when-something-goes-wrong.md) lists the
+Discord: <https://discord.pxanetwork.com> — [guide 10](10-when-something-goes-wrong.md) lists the
 five things to paste so the first reply is a useful one.
 
 If this saved you buying a new card and you would like to chip in:

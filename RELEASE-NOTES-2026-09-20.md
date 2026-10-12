@@ -470,7 +470,7 @@ exactly what was and was not measured rather than claiming more.
 
 ## Community
 
-- Discord: <https://discord.gg/EqazvV9tf>
+- Discord: <https://discord.pxanetwork.com>
 - If this is useful to you: <https://ko-fi.com/shatteredrealms1>
 
 ## Credits

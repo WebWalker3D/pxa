@@ -2,7 +2,7 @@
 
 <p align="center">
 <a href="https://benchmarks.pxanetwork.com"><img alt="Live leaderboard" src="https://img.shields.io/badge/Leaderboard-benchmarks.pxanetwork.com-E69F00?style=for-the-badge"></a>
-<a href="https://discord.gg/EqazvV9tf"><img alt="Discord" src="https://img.shields.io/badge/Discord-PXA%20Network-5865F2?logo=discord&logoColor=white&style=for-the-badge"></a>
+<a href="https://discord.pxanetwork.com"><img alt="Discord" src="https://img.shields.io/badge/Discord-PXA%20Network-5865F2?logo=discord&logoColor=white&style=for-the-badge"></a>
 <a href="https://ko-fi.com/shatteredrealms1"><img alt="Ko-fi" src="https://img.shields.io/badge/Ko--fi-Support%20PXA-FF5E5B?logo=ko-fi&logoColor=white&style=for-the-badge"></a>
 </p>
 
@@ -128,5 +128,5 @@ mistrjirka, quenthalion and thisistimow. Thanks to everyone who tests and report
 ## Community
 
 - Live leaderboard: https://benchmarks.pxanetwork.com
-- Discord: https://discord.gg/EqazvV9tf
+- Discord: https://discord.pxanetwork.com
 - Support on Ko-fi: https://ko-fi.com/shatteredrealms1

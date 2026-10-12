@@ -840,5 +840,5 @@ Thanks to mistrjirka, a developer on the PXA Network Discord, for his help on th
 
 ## Community
 
-- Discord: <https://discord.gg/EqazvV9tf>
+- Discord: <https://discord.pxanetwork.com>
 - Support the work (Ko-fi): <https://ko-fi.com/shatteredrealms1>

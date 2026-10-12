@@ -590,7 +590,7 @@ class EncodeService(object):
                 "defaults": {"work_dir": self.default_work(), "out_dir": self.default_out()}, "runtime": self.runtime_view(sel),
                 "catalog": [{"key": t["key"], "name": t["name"], "family": t["family"], "bpw": t["bpw"], "cls": t["cls"]} for t in PL.TIERS],
                 "hf_token": bool(PL.hf_token()), "jobs": self.job_list(), "how_to_get_pro": {
-                    "kofi": "https://ko-fi.com/shatteredrealms1", "discord": "https://discord.gg/EqazvV9tf",
+                    "kofi": "https://ko-fi.com/shatteredrealms1", "discord": "https://discord.pxanetwork.com",
                     "text": "Pro is a supporter feature: support PXA on Ko-fi, then use /encoder in the PXA Network Discord to get your key."}}
 
     @staticmethod

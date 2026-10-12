@@ -247,7 +247,7 @@ made and why — it is the most useful thing you can send me.
 
 ## How to ask for help
 
-Come to Discord: **<https://discord.gg/EqazvV9tf>**
+Come to Discord: **<https://discord.pxanetwork.com>**
 
 Paste these five things. It is two minutes of your time and it usually turns a week of
 back-and-forth into one reply:

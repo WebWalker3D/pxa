@@ -152,7 +152,7 @@ recognising:
 | it asks for log probabilities and gets a 500 | known, still open. Generation itself is unaffected; the engine's equivalent endpoint works |
 
 For anything else, [guide 10](10-when-something-goes-wrong.md) applies here too, and Discord is
-<https://discord.gg/EqazvV9tf>.
+<https://discord.pxanetwork.com>.
 
 ---
 

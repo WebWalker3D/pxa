@@ -275,7 +275,7 @@ function renderGet() {
     : el("div", {class: "row"}, el("input", {type: "password", id: "en-key", autocomplete: "off", spellcheck: "false", "aria-label": "your PXA Quantizer key", placeholder: "pxk1.K-XXXXXXXX.…", style: "flex:1;min-width:200px"}));
   const pro = el("div", {class: "card", style: "margin:0"}, el("h4", {text: "Pro encoder (a supporter feature)"}),
     el("p", {class: "tiny"}, "The PXQN tiers: the same size as the classic ones with much lower error. Support PXA on ", el("a", {href: "https://ko-fi.com/shatteredrealms1", target: "_blank", rel: "noopener", text: "Ko-fi"}),
-      ", then type ", el("b", {text: "/encoder"}), " in the ", el("a", {href: "https://discord.gg/EqazvV9tf", target: "_blank", rel: "noopener", text: "PXA Network Discord"}), ": the bot gives you a key."),
+      ", then type ", el("b", {text: "/encoder"}), " in the ", el("a", {href: "https://discord.pxanetwork.com", target: "_blank", rel: "noopener", text: "PXA Network Discord"}), ": the bot gives you a key."),
     el("div", {class: "tiny", style: "margin:6px 0"}, "I have a key:"), keyRow,
     el("div", {class: "tiny", style: "margin-top:6px"}, "The key is stored on this computer (file mode 600) and sent only to the PXA licence server."),
     el("div", {class: "row", style: "margin-top:8px"}, el("button", {class: "b pri", id: "en-getpro", text: "Download Pro", disabled: running, onclick: () => enGet("pro")})));

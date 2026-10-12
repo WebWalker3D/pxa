@@ -1,7 +1,7 @@
 # Glossary
 
 Every word in these guides that is not an ordinary English word, explained in two sentences.
-If something here is still unclear, ask on Discord — <https://discord.gg/EqazvV9tf> — and I will
+If something here is still unclear, ask on Discord — <https://discord.pxanetwork.com> — and I will
 rewrite the entry.
 
 ---

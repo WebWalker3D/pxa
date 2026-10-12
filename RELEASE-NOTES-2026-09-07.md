@@ -778,7 +778,7 @@ incumbent path) and all are slower or a net loss on the shapes measured.
 
 ## Community and support
 
-- **PXA Network Discord:** https://discord.gg/EqazvV9tf — support, the benchmark wall, and
+- **PXA Network Discord:** https://discord.pxanetwork.com — support, the benchmark wall, and
   dev talk. Release notes post there automatically. If a number in this file does not
   reproduce from the same command on the same file, that is a bug report and this is where
   to file it.
