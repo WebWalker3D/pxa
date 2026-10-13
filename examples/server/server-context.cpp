@@ -2475,6 +2475,8 @@ bool server_context::launch_slot_with_task(server_slot& slot, server_task& task)
     }
 
     {  // apply logit bias
+        // Request-local overrides must not survive reuse of this slot.
+        slot.sparams.logit_bias = default_sparams.logit_bias;
         const auto& logit_bias = data.find("logit_bias");
         if (logit_bias != data.end() && (logit_bias->is_object() || logit_bias->is_array())) {
             slot.sparams.logit_bias.clear(); // only clear if user sets it
