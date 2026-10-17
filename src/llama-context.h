@@ -722,10 +722,14 @@ struct llama_context {
     std::vector<std::string> pxa_reserved_sig;
 
     // thrash guard: shapes (ubatch width, node count) a re-reserve provably cannot cover, plus a
-    // hard cap on how many times this context may re-reserve at all. Without it a context whose
-    // graph shape alternates re-reserves forever, two compute-buffer reallocations per token.
+    // cap on how many re-reserves IN A ROW may evict a plan before it served
+    // PXA_RESERVE_MIN_SERVED ubatches. Without it a context whose graph shape alternates
+    // re-reserves forever, two compute-buffer reallocations per token. pxa_reserve_count stays
+    // the lifetime total (it numbers the log lines); the cap reads pxa_reserve_thrash_run.
     std::set<uint64_t> pxa_reserve_dead_shapes;
-    int  pxa_reserve_count     = 0;
+    int  pxa_reserve_count      = 0;
+    int  pxa_reserve_thrash_run = 0;  // consecutive re-reserves that evicted an unamortized plan
+    int  pxa_reserve_served     = 0;  // main-plan ubatches run since the last re-reserve
     bool pxa_reserve_latched_off = false;
     // PXA_WARMUP_NO_REUSE: the last llama_build_graph built the all-experts warmup shape
     bool pxa_last_build_warmup = false;

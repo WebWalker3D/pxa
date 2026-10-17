@@ -9717,6 +9717,7 @@ static bool pxa_reserve_real_graph(struct llama_context & lctx, int n_tokens);
 static bool pxa_reserve_debug();
 static bool pxa_reserve_guard_enabled();
 static int  pxa_reserve_max();
+static int  pxa_reserve_min_served();
 static void pxa_graph_signature(const ggml_cgraph * gf, std::vector<std::string> & out);
 static void pxa_print_graph_diff(const std::vector<std::string> & reserved, const std::vector<std::string> & real, int width);
 
@@ -10720,6 +10721,15 @@ static int llama_decode_internal(
 
                     pxa_reserve_real_graph(lctx, width);
                     lctx.pxa_reserve_count++;
+                    lctx.pxa_reserve_thrash_run = lctx.pxa_reserve_served >= pxa_reserve_min_served()
+                                                ? 1 : lctx.pxa_reserve_thrash_run + 1;
+                    if (pxa_reserve_debug()) {
+                        LLAMA_LOG_INFO("%s: PXA_RESERVE_GUARD: reserve #%d at width %d after the previous plan served %d "
+                                "ubatches; thrash run %d (latches above %d, amortized at %d)\n", __func__,
+                                lctx.pxa_reserve_count, width_now, lctx.pxa_reserve_served, lctx.pxa_reserve_thrash_run,
+                                pxa_reserve_max(), pxa_reserve_min_served());
+                    }
+                    lctx.pxa_reserve_served = 0;
                     if (lctx.pxa_reserved_nodes != expect) {
                         LLAMA_LOG_WARN("%s: reserve at n_tokens = %d built %d nodes, this ubatch has %d - it will re-plan\n",
                                 __func__, width, lctx.pxa_reserved_nodes, expect);
@@ -10732,12 +10742,14 @@ static int llama_decode_internal(
                                     "leaving that shape to the graph allocator\n", __func__, expect, width_now);
                         }
                     }
-                    if (pxa_reserve_guard_enabled() && lctx.pxa_reserve_count > pxa_reserve_max()) {
+                    if (pxa_reserve_guard_enabled() && lctx.pxa_reserve_thrash_run > pxa_reserve_max()) {
                         lctx.pxa_reserve_latched_off = true;
-                        LLAMA_LOG_WARN("%s: PXA_RESERVE_GUARD: %d re-reserves on this context, the last for a %d-node "
-                                "graph at ubatch width %d (reserved at width %d, %d nodes) - this context's graph shape "
-                                "is not stable enough for one reserved plan; disabling the real-path reserve here\n",
-                                __func__, lctx.pxa_reserve_count, expect, width_now, width, lctx.pxa_reserved_nodes);
+                        LLAMA_LOG_WARN("%s: PXA_RESERVE_GUARD: %d re-reserves in a row each evicted a plan that served "
+                                "fewer than %d ubatches (%d on this context), the last for a %d-node graph at ubatch "
+                                "width %d (reserved at width %d, %d nodes) - this context's graph shape is not stable "
+                                "enough for one reserved plan; disabling the real-path reserve here\n",
+                                __func__, lctx.pxa_reserve_thrash_run, pxa_reserve_min_served(), lctx.pxa_reserve_count,
+                                expect, width_now, width, lctx.pxa_reserved_nodes);
                     }
                     lctx.reset_scheduler();
                     ggml_backend_sched_set_eval_callback(lctx.sched, lctx.cparams.cb_eval, lctx.cparams.cb_eval_user_data);
@@ -10831,6 +10843,10 @@ static int llama_decode_internal(
                 ggml_backend_sched_synchronize(lctx.sched);
                 ggml_backend_sync_tag_pop();
             }
+        }
+        // PXA_RESERVE_MIN_SERVED: every main-plan ubatch, built or reused, is one the current plan served
+        if (!pxa_gs.s && lctx.pxa_reserve_served < INT_MAX) {
+            lctx.pxa_reserve_served++;
         }
 
         if (cparams.mtp_op_type != MTP_OP_NONE) {
@@ -11860,8 +11876,9 @@ static bool pxa_reserve_shape_enabled() {
     return on;
 }
 
-// PXA_RESERVE_GUARD=0 disables the thrash guard. PXA_RESERVE_MAX caps how many times one context
-// may re-reserve before the mechanism latches off for that context (default 24).
+// PXA_RESERVE_GUARD=0 disables the thrash guard. PXA_RESERVE_MAX caps how many CONSECUTIVE
+// unamortized re-reserves (see PXA_RESERVE_MIN_SERVED) one context may make before the mechanism
+// latches off for that context (default 24).
 static bool pxa_reserve_guard_enabled() {
     static const bool on = [] {
         const char * e = getenv("PXA_RESERVE_GUARD");
@@ -11874,6 +11891,21 @@ static int pxa_reserve_max() {
     static const int v = [] {
         const char * e = getenv("PXA_RESERVE_MAX");
         return e != nullptr ? atoi(e) : 24;
+    }();
+    return v;
+}
+
+// PXA_RESERVE_MIN_SERVED (default 4): a re-reserve whose predecessor plan served at least this many
+// ubatches was amortized and restarts the thrash run instead of extending it. Thrash evicts a plan
+// after one ubatch (an MTP head, a draft/verify pair taking turns). The prefill/decode hand-off is
+// not thrash: it re-reserves twice per request, and each plan then serves a whole prefill or a
+// whole reply. Counting those against PXA_RESERVE_MAX latched every long-lived single-slot server
+// off after ~11 requests, onto the per-ubatch re-plan path PXA_SCHED_RESERVE_REAL exists to avoid
+// (2026-10-17: 35B-A3B, 2x V100, n_copies = 2, same 3,655-token request 1.56 s -> 2.02 s).
+static int pxa_reserve_min_served() {
+    static const int v = [] {
+        const char * e = getenv("PXA_RESERVE_MIN_SERVED");
+        return e != nullptr ? atoi(e) : 4;
     }();
     return v;
 }
