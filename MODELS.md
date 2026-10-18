@@ -7,7 +7,7 @@ Models quantized to PXA formats by the team, newest first. This page and the Mod
 |[Swift-1.5-Qwen3.8-27B-PXQN-OneCard](https://huggingface.co/poisonxa/Swift-1.5-Qwen3.8-27B-PXQN-OneCard) |  | PXANetwork | 2026-10-01 | 1,830 | 1 | 2026-10-12|
 |[Qwen3.8-27B-PXQN-OneCard](https://huggingface.co/poisonxa/Qwen3.8-27B-PXQN-OneCard) |  | PXANetwork | 2026-09-30 | 2,437 | 1 | 2026-10-12|
 |[Ornith-1.5-35B-A3B-PXQ4-GGUF](https://huggingface.co/poisonxa/Ornith-1.5-35B-A3B-PXQ4-GGUF) | works with tensor split: -sm tensor | poisonxa | 2026-09-22 | 718 | 0 | 2026-10-12|
-|[PXA-Fusion4-35B-GGUF](https://huggingface.co/poisonxa/PXA-Fusion4-35B-GGUF) | Fusion4 35B | poisonxa | 2026-09-22 | 889 | 5 | 2026-10-12|
+|[PXA-Fusion4-35B-GGUF](https://huggingface.co/poisonxa/PXA-Fusion4-35B-GGUF) | Fusion4 35B | poisonxa | 2026-09-22 | 752 | 5 | 2026-10-12|
 |[Qwable-27B-GGUF](https://huggingface.co/poisonxa/Qwable-27B-GGUF) | 27B dense | poisonxa | 2026-09-22 | 620 | 1 | 2026-10-12|
 |[PXA-Coder-35B-PXQ4](https://huggingface.co/poisonxa/PXA-Coder-35B-PXQ4) | coder model in PXQ4 | poisonxa | 2026-09-22 | 315 | 1 | 2026-09-09|
 |[Qwen3.8-27B-PXQ-GGUF](https://huggingface.co/mistrjirka/Qwen3.8-27B-PXQ-GGUF) |  | mistrjirka | 2026-09-17 | 1,547 | 1 | 2026-09-17|
