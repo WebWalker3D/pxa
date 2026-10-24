@@ -229,6 +229,7 @@ Models quantized to PXA formats by the team. New posts in the #models channel on
 
 | Model | Notes | Published by | Added |
 | --- | --- | --- | --- |
+|[PXA-Supporter-Models](https://huggingface.co/poisonxa/PXA-Supporter-Models) | link your Hugging Face name with `/hf-link` first | hand | 2026-10-24|
 |[Swift-1.5-Qwen3.8-27B-PXQN-OneCard](https://huggingface.co/poisonxa/Swift-1.5-Qwen3.8-27B-PXQN-OneCard) |  | PXANetwork | 2026-10-01|
 |[Qwen3.8-27B-PXQN-OneCard](https://huggingface.co/poisonxa/Qwen3.8-27B-PXQN-OneCard) |  | PXANetwork | 2026-09-30|
 |[Ornith-1.5-35B-A3B-PXQ4-GGUF](https://huggingface.co/poisonxa/Ornith-1.5-35B-A3B-PXQ4-GGUF) | works with tensor split: -sm tensor | poisonxa | 2026-09-22|
