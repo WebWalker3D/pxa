@@ -5,7 +5,7 @@ Models quantized to PXA formats by the team, newest first. This page and the Mod
 | Model | Notes | Published by | Added | Downloads | Likes | Updated |
 | --- | --- | --- | --- | --- | --- |
 |[Swift-1.5-Qwen3.8-Flash-Next-PXQN2](https://huggingface.co/poisonxa/Swift-1.5-Qwen3.8-Flash-Next-PXQN2) |  | PXANetwork | 2026-10-27 | 0 | 1 | 2026-10-27|
-|[PXA-Supporter-Models](https://huggingface.co/poisonxa/PXA-Supporter-Models) | <https://ko-fi.com/shatteredrealms1> | PXANetwork | 2026-10-24 | 276 | 3 | 2026-10-25|
+|[PXA-Supporter-Models](https://huggingface.co/poisonxa/PXA-Supporter-Models) | <https://ko-fi.com/shatteredrealms1> | PXANetwork | 2026-10-24 | 276 | 4 | 2026-10-25|
 |[Swift-1.5-Qwen3.8-27B-PXQN-OneCard](https://huggingface.co/poisonxa/Swift-1.5-Qwen3.8-27B-PXQN-OneCard) |  | PXANetwork | 2026-10-01 | 2,193 | 2 | 2026-10-12|
 |[Qwen3.8-27B-PXQN-OneCard](https://huggingface.co/poisonxa/Qwen3.8-27B-PXQN-OneCard) |  | PXANetwork | 2026-09-30 | 2,666 | 1 | 2026-10-12|
 |[Ornith-1.5-35B-A3B-PXQ4-GGUF](https://huggingface.co/poisonxa/Ornith-1.5-35B-A3B-PXQ4-GGUF) | works with tensor split: -sm tensor | poisonxa | 2026-09-22 | 782 | 0 | 2026-10-12|
